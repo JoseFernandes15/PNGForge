@@ -1,16 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { LanguageToggle } from "@/components/LanguageToggle";
+import { LanguageSelect } from "@/components/LanguageSelect";
 import { ImageGenerator } from "@/components/ImageGenerator";
 import { Language, translations } from "@/lib/translations";
 
 const Index = () => {
   const [language, setLanguage] = useState<Language>("en");
-
-  const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "en" ? "pt" : "en"));
-  };
 
   const t = translations[language];
 
@@ -27,7 +23,7 @@ const Index = () => {
           </a>
           
           <div className="flex items-center gap-2">
-            <LanguageToggle language={language} onToggle={toggleLanguage} />
+            <LanguageSelect language={language} onChange={setLanguage} />
             <ThemeToggle />
           </div>
         </div>
