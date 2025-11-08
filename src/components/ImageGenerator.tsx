@@ -25,7 +25,7 @@ export const ImageGenerator = ({ language }: ImageGeneratorProps) => {
 
     try {
       const response = await fetch(
-        `https://gen-i.zepedrofernandessampaio.workers.dev/?${encodeURIComponent(prompt)}`,
+        `https://text-to-image.zepedrofernandessampaio.workers.dev/?${encodeURIComponent(prompt)}`,
         { method: "GET" }
       );
 
